@@ -33,6 +33,12 @@
         "conclusion": "failure",
         "cause": "Git omitted empty pending-task directory; docs link failure",
         "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39108907443"
+      },
+      {
+        "headSha": "e88d37b14ba548a080bb6141472e1b7e8b1fd99a",
+        "conclusion": "success",
+        "event": "pull_request",
+        "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109019635"
       }
     ],
     "scope_resolved_by_user": true,
@@ -49,5 +55,17 @@
     "docs/implementation/tasks/active/setup-http-tests.md"
   ],
   "deliberate_faults": false,
-  "instruction_transition": "not yet performed; original preserved in Git"
+  "instruction_transition": {
+    "original_instructions_commit": "5beb249",
+    "development_lines": 132,
+    "setup_writers_finished": true,
+    "readback": "coordinator before transition commit; reviewer requested before PR merge"
+  },
+  "independent_review": {
+    "reviewer": "/root/reviewer",
+    "finding": "P2 split-chunk UTF8 corruption",
+    "fix_commit": "e88d37b14ba548a080bb6141472e1b7e8b1fd99a",
+    "recheck": "same raw HTTP actual-parser reproduction now returns café exactly",
+    "limitations": "instrumented echo; saved-feature regression assigned to development"
+  }
 }

@@ -21,12 +21,11 @@ installing Chromium with OS dependencies. No cache/artifact uploads or paid runn
 Observe actual run SHA, event, conclusion and PR head before merging; after a merge
 verify the push run for the merged commit. Workflow existence alone is not a pass.
 
-Verification: clean baseline c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff on Node 24.21.0/npm
-11.19.0 passed six HTTP tests, one Chromium browser shell/navigation/mobile check,
-and 73 relative Markdown links. Temporary browser server stopped after execution.
-No feature persistence/restart acceptance yet. Initial GitHub push was rejected
-for missing OAuth workflow scope; hosted checks remain pending in
-[setup-project.md](../implementation/tasks/active/setup-project.md).
+Verification: Node HTTP 6/6 and Chromium workspace 1/1 at c616245; HTTP recheck
+6/6 after parser fix e88d37b. Actual GitHub PR run
+[39109019635](https://github.com/spectraexteriors/field-desk/actions/runs/39109019635)
+passed all steps for e88d37b14ba548a080bb6141472e1b7e8b1fd99a. Worker and
+integrated results are distinguished in [setup outcome](../implementation/tasks/archived/setup-project.md).
 
 ## Checkout-only missing directory
 

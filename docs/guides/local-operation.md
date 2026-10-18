@@ -15,9 +15,7 @@ rollback alone does not roll back data. This release will avoid destructive sche
 migrations; inspect compatibility before switching versions. Backup/restore procedure
 is guidance, not a claim of a performed backup.
 
-Verification: clean baseline c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff on Node 24.21.0/npm
-11.19.0 passed six HTTP tests, one Chromium browser shell/navigation/mobile check,
-and 73 relative Markdown links. Temporary browser server stopped after execution.
-No feature persistence/restart acceptance yet. Initial GitHub push was rejected
-for missing OAuth workflow scope; hosted checks remain pending in
-[setup-project.md](../implementation/tasks/active/setup-project.md).
+Verification: clean e88d37b launched node src/server.js on ephemeral loopback,
+served health/title, then stopped after command/cwd verification. Temporary DB
+removed; [process evidence](../../evidence/setup-operation.json). Full saved-feature
+restart acceptance is intentionally pending development integration.

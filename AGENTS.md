@@ -1,15 +1,18 @@
-# Project agent instructions
+# Field Desk agent instructions
 
 ## Start here
 
 - Read applicable repository instructions, then [the documentation map](docs/README.md)
   and [the project record](docs/project.md). Read relevant tasks and decisions;
   consult the relevant [guides](docs/guides/README.md) before rediscovering procedures.
-- The project record alone owns lifecycle status. For `new` or `setup`, follow
-  [the setup guide](docs/setup.md); for `ready`, follow the development workflow
-  below. Inspect repository evidence before acting on a status marker.
-- Work toward the user's requested outcome. A setup marker does not authorize
-  unrelated setup work. Preserve existing work and resume completed setup steps.
+- Follow the development workflow below. The project record owns lifecycle; inspect
+  repository evidence and preserve existing work when resuming. The setup procedure
+  is retained as historical/reference guidance outside normal startup reading.
+- Field Desk is a local Node 24/SQLite app; read the [architecture](docs/architecture/overview.md).
+  Use [local development](docs/guides/local-development.md), [verification](docs/guides/testing.md),
+  and [local operation](docs/guides/local-operation.md) for verified procedures.
+- Work within the approved public-repository/local-operation boundaries in the
+  project record. Keep app data local; no charges, production or global-config changes.
 - Follow the applicable instruction hierarchy. When accepted intent and observed
   implementation disagree, identify the discrepancy instead of silently rewriting
   either. Record unknowns rather than inventing project facts or successful checks.
@@ -127,11 +130,3 @@
 - Follow [guide maintenance rules](docs/guides/README.md#create-and-maintain-guides).
   Use existing editing boundaries for concurrent changes. Before guides exist,
   establish applicable procedures during setup; do not treat template text as commands.
-
-## Setup handoff
-
-Before regular development begins, the setup owner performs the
-[controlled instruction rewrite](docs/setup.md#transition-to-regular-development).
-Preserve the working rules above, replace setup routing and this handoff section
-with project-specific guidance, and retain the setup guide outside the normal
-development startup reading path. Subsequent agents read the resulting file.
