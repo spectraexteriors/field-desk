@@ -17,7 +17,7 @@ remotes, task moves or spawning. Coordinator owns review/closure.
 ## Outcome and handoff
 
 Actual implementation interval 2026-10-18 07:51:43–07:54:06 UTC. No deliberately
-introduced faults, blockers, merge conflicts or failed checks. Templates accept
+introduced faults, blockers or merge conflicts. Templates accept
 trimmed names (1–120 chars), ordered items (1–100, each 1–200 chars). GET lists return
 arrays; POST/PATCH return saved objects. Template PATCH accepts name/items, at least
 one. Run creation accepts templateId/name; run PATCH accepts itemIndex/completed.
@@ -41,3 +41,20 @@ Useful guide correction: a positional Playwright substring matches absolute work
 paths; use test/browser/checklists.spec.js for strict file targeting. No shared docs
 edited. Combined tests, non-author review, full maintained-document review and
 archival remain coordinator responsibilities; worker results alone do not claim them.
+
+## Integrated review correction
+
+Non-author review found real P2 keyboard focus loss when an active checkbox was
+disabled during save. Coordinator reassigned only UI/test/task files after the
+first handoff stopped. Corrected 07:57:39–07:58:09 UTC: restore prior checkbox focus
+only if it fell to body and no later pointer/focus movement occurred. Do not reclaim
+focus from another control. Added repeated-Space completion/reopening assertions and
+a delayed-response regression verifying focus stays in the run-name field when the
+user moves there. The delay controls an async test boundary; it introduces no fault.
+
+Explicit checklist-file Chromium run passed 3/3 on port 3222. Both changed code/test
+files were fingerprinted before testing and committed unchanged as
+d8fd7c13839b53ce02adbc313ea875519fae6616. HTTP code unchanged, so no duplicate HTTP
+run. Browser server stopped automatically; no listener remains. Shared guides reviewed
+for procedure impact; no change beyond the earlier strict-file targeting suggestion.
+Combined verification and non-author recheck remain coordinator-owned.
