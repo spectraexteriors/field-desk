@@ -65,7 +65,7 @@ try {
   await page.getByRole('button', { name: 'Edit template Site visit preparation', exact: true }).click();
   await page.getByLabel('Template name', { exact: true }).fill('Updated visit preparation');
   await page.getByLabel('Items (one per line)', { exact: true }).fill('New instruction');
-  await page.getByRole('button', { name: 'Save template', exact: true }).click();
+  await page.getByRole('button', { name: 'Save changes', exact: true }).click();
   await expect(page.getByLabel('Checklist template', { exact: true })).toContainText('Updated visit preparation');
   evidence.checks.push('browser template/run creation, item completion and template edit');
   await active.stop(); active = await launch();
@@ -84,6 +84,8 @@ try {
   expect(pageErrors).toEqual([]);
   evidence.checks.push('both features persist across process restart', 'run snapshot survives template edits and restart', '375px layout without horizontal overflow', 'no browser script errors');
   evidence.result = 'passed';
+} catch (error) {
+  evidence.result = 'failed'; evidence.failure = error.message; throw error;
 } finally {
   if (browser) await browser.close();
   if (active) await active.stop();

@@ -1,0 +1,25 @@
+{
+  "testedCommit": "0ba9f0d96944a72c9e4e883891b80549b437da74",
+  "cleanAtLaunch": true,
+  "node": "v24.21.0",
+  "startedAt": "2026-10-18T07:55:27.017Z",
+  "launches": [
+    {
+      "pid": 20889,
+      "command": "/Users/spectra/.local/share/fnm/node-versions/v24.21.0/installation/bin/node src/server.js",
+      "cwd": "/Users/spectra/Dev/field-desk",
+      "url": "http://127.0.0.1:61246",
+      "stopped": true,
+      "identityCheckedBeforeStop": true,
+      "exitCode": 0
+    }
+  ],
+  "checks": [
+    "browser follow-up creation with Unicode"
+  ],
+  "temporaryDatabaseRemoved": true,
+  "finishedAt": "2026-10-18T07:55:57.606Z",
+  "result": "failed",
+  "cause": "Coordinator acceptance script searched Save template after edit mode changed button to Save changes",
+  "classification": "verification-script mismatch; no app fault introduced"
+}
