@@ -11,7 +11,8 @@ npm run test:browser
 
 Node discovers test/*.test.js. Request-body/origin validation precedes mutation route dispatch.
 HTTP tests use real ephemeral loopback listeners
-and isolated databases. Playwright uses port 3219 and an automatically cleaned
+and isolated databases. Playwright uses port 3219 by default; FIELD_DESK_BROWSER_PORT selects an isolated
+worker port. It uses and an automatically cleaned
 temporary database. Its server refuses reuse; free that port before browser tests.
 The workspace browser check covers keyboard navigation and mobile overflow.
 Feature tests will extend acceptance as implementation arrives.

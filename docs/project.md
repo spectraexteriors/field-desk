@@ -43,7 +43,9 @@ Full saved-feature/restart acceptance is development work, not claimed by readin
 
 ## Coordination
 
-Coordinator /root, integration checkout /Users/spectra/Dev/field-desk.
+Coordinator /root, integration checkout /Users/spectra/Dev/field-desk, branch
+delivery/integration. Feature assignments are recorded before dispatch in
+[delivery task](implementation/tasks/active/deliver-field-desk.md).
 Four agent slots available; coordinator plus two feature writers, then a separate
 non-author reviewer. Worktrees isolate feature branches and test databases.
 Assignments live in owning tasks before dispatch. Only coordinator changes shared
