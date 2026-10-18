@@ -32,11 +32,10 @@ Worker finished; merged 2fb6c61 with --no-ff at c616245ea9fa77ee4a8913a1c36ad08f
 No active setup workers. Original instructions preserved at 5beb249; rewrite has
 not occurred and lifecycle remains setup.
 
-Public repository created; initial push rejected by GitHub because gh OAuth token
-lacks workflow scope. No published refs or Actions runs. User must interactively
-run `gh auth refresh -h github.com -s workflow`; then retry existing origin push,
-verify CI, obtain setup review and perform instruction/documentation handoff.
-No deliberate fault was introduced; this is an actual credential-permission issue.
+User refreshed workflow scope; push of d2bd592 succeeded. Hosted run 39108907443
+failed docs link check because Git omitted the empty pending-task directory.
+Added .gitkeep within this project, preserving the source. No deliberate fault.
+Next: corrective PR checks, reviewer findings, then instruction transition.
 
 ## Verification
 
@@ -46,6 +45,14 @@ relative links. npm install audit: zero vulnerabilities. Browser runner launched
 node scripts/browser-server.js on loopback 3219 using a temporary SQLite directory;
 it shut down after the run. No cloud deployment. Remote CI remains unverified.
 Evidence: [setup checkpoint](../../../../evidence/setup-checkpoint.json).
+
+## Independent review assignment
+
+Assigned before dispatch: /root/reviewer, read-only non-author setup review of
+baseline d2bd592 and subsequent instruction transition diff. Inspect implementation,
+workflow, acceptance, public-source safety and maintained docs; report actionable
+findings with file/line and limitations. No edits, remote writes or spawning.
+Coordinator owns fixes, integration, instruction rewrite and closure.
 
 ## Documentation review
 

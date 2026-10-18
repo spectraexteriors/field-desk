@@ -27,3 +27,10 @@ and 73 relative Markdown links. Temporary browser server stopped after execution
 No feature persistence/restart acceptance yet. Initial GitHub push was rejected
 for missing OAuth workflow scope; hosted checks remain pending in
 [setup-project.md](../implementation/tasks/active/setup-project.md).
+
+## Checkout-only missing directory
+
+If check:docs fails on a link to an empty task directory only in CI, verify that
+Git tracks a .gitkeep there. Git tracks files, not empty directories. The first
+hosted run exposed the pending-directory omission after setup moved its only task.
+The project copy now preserves it; no source-framework edit was made.

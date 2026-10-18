@@ -24,8 +24,19 @@
   "publication": {
     "repository_created": true,
     "initial_push": "rejected: OAuth credential lacks workflow scope",
-    "remote_refs_published": false,
-    "actions_runs": []
+    "remote_refs_published": true,
+    "actions_runs": [
+      {
+        "id": 39108907443,
+        "headSha": "d2bd592539ce188fd89413de5d39cab37d8730a9",
+        "event": "push",
+        "conclusion": "failure",
+        "cause": "Git omitted empty pending-task directory; docs link failure",
+        "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39108907443"
+      }
+    ],
+    "scope_resolved_by_user": true,
+    "successful_push_sha": "d2bd592539ce188fd89413de5d39cab37d8730a9"
   },
   "setup_test_worker": "/root/setup_tests",
   "worker_commit": "2fb6c610a546140c52aa57cb897e6b80f8092f5f",
