@@ -29,11 +29,14 @@ test('shutdown closes an accepted idle browser connection without waiting for a 
   const app = createApp({ dbPath: ':memory:' });
   await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve));
   const socket = net.createConnection({ host: '127.0.0.1', port: app.server.address().port });
+  let socketError;
+  socket.on('error', error => { socketError = error; });
   await once(socket, 'connect');
-  const closed = once(socket, 'close');
+  const closed = new Promise(resolve => socket.once('close', resolve));
   let timedOut = false;
   const timeout = setTimeout(() => { timedOut = true; socket.destroy(); }, 1000);
   try { await app.close(); await closed; }
   finally { clearTimeout(timeout); socket.destroy(); }
   assert.equal(timedOut, false, 'shutdown must close idle accepted sockets itself');
+  assert.ok(!socketError || socketError.code === 'ECONNRESET', 'a closed connection may reset, but other socket errors are unexpected');
 });

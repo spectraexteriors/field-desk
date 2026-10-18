@@ -60,3 +60,13 @@ socket. Coordinator identity-checked parent/server/browser, terminated only owne
 headless browser, observed clean child exits and DB removal; failed run retained.
 New shutdown closes accepted connections; regression and bounded script cleanup
 added. Non-author recheck required before publication. No fault injection.
+
+Assigned /root/reviewer read-only recheck of ea85f6d before dispatch: inspect
+closeAllConnections shutdown regression and bounded acceptance cleanup; same
+resource boundaries. Clean local browser/restart procedure now passed six checks,
+both processes exited 0 after identity checks and temporary DB was removed.
+
+Reviewer shutdown recheck found the raw-socket test intermittently rejected valid
+ECONNRESET on close. Coordinator changed its close wait to accept only that expected
+reset, retaining bounded shutdown/actual socket closure assertions; recheck required.
+This was test nondeterminism, not a product failure or a manufactured fault.
