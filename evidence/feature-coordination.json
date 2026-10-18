@@ -97,5 +97,14 @@
     "shutdown_fix_baseline": "ea85f6dd658fb4701b6d3d5a1bc95478171ee4f9",
     "test_recheck_baseline": "4b3f07e32a91dfd15865cf0123bcd4a0f0126613",
     "test_recheck": "3/3 passed independently after accepting expected ECONNRESET"
+  },
+  "final_documentation_review": {
+    "reviewer": "/root/reviewer",
+    "baseline": "02a262a363a20f7eee5105c23e31c07ef7689137",
+    "finding": "P3: shutdown discovery incorrectly grouped with non-author discoveries in delivery task",
+    "resolution": "Changed heading to Findings resolved; coordinator discovery remains distinguished from independent recheck",
+    "other_findings": [],
+    "relative_links_resolved": 105,
+    "scope": "final diff, maintained docs/templates/decision, archived tasks and evidence; unchanged suites not rerun"
   }
 }

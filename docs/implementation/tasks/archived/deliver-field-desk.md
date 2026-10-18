@@ -29,7 +29,7 @@ ea85f6d passed UI creation/edit, item progress, snapshot preservation after rest
 mobile width and no script errors. Runtime bytes match delivery; both process
 commands/cwds were checked before clean shutdown and temporary DB removal.
 
-Non-author findings resolved: split UTF-8 corruption; valid Unicode checklist
+Findings resolved: split UTF-8 corruption; valid Unicode checklist
 payload rejected; checkbox focus lost; idle browser socket preventing shutdown.
 Review rechecks verified each. The new shutdown regression initially rejected
 valid ECONNRESET; corrected assertion passed five repetitions and independent3/3
@@ -43,7 +43,9 @@ architecture, accepted foundation, templates, delivery report and open tasks;
 no pending decisions. Consolidated guide evidence, replaced planned API language,
 recorded exact payloads/commands, repaired archival links, and shortened task records
 without deleting unique history. Required setup instruction rewrite/readback and
-review survive in Git. Final reviewer receives this closure diff before merge.
+review survive in Git. Final non-author review at 02a262a found only shutdown-discovery attribution;
+corrected wording distinguishes coordinator discovery from independent recheck.
+No further implementation findings; reviewer confirmed 105 links resolve.
 
 All temporary worktrees were clean/reachable before removal; no owned test process
 or test-port listener remains. Starter and original reports match original hashes;
