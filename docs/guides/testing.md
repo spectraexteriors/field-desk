@@ -18,7 +18,7 @@ The workspace browser check covers keyboard navigation and mobile overflow.
 Feature workers own browser/HTTP scenarios. The coordinator integration test launches
 and restarts a real process for both features and splits a multibyte UTF-8 title
 across HTTP chunks. The [local release procedure](local-operation.md) adds clean-
-checkout browser and restart verification; its first complete run is pending.
+checkout browser and restart verification; it passed at clean ea85f6d.
 
 GitHub Actions Checks / acceptance runs these checks on standard Ubuntu runners,
 installing Chromium with OS dependencies. No cache/artifact uploads or paid runners.

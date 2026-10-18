@@ -64,7 +64,11 @@ shared evidence links after review. Guide fixes belong to the same delivery task
   prevented server shutdown after its listener closed. Identity-checked browser
   termination released it; script cleaned both server processes and temporary DB.
   Coordinator added closeAllConnections and an idle-socket shutdown regression;
-  bounded script cleanup now retains evidence even if stopping fails. This was
+  bounded script cleanup now retains evidence even if stopping fails. Reviewer
+  found valid ECONNRESET could make the new raw-socket test fail intermittently;
+  corrected close-wait logic passed five focused repetitions and independent3/3
+  boundary recheck at4b3f07e. Clean UI/restart acceptance passed at ea85f6d, with
+  both identity-checked servers stopped and temporary database removed. This was
   normal release verification, not a deliberately injected app fault.
 
 ## Workflow assessment and proposed improvements

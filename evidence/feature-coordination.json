@@ -21,7 +21,16 @@
       "handoff_commit": "4a5aaca32dfd03b7e8a389571d7b7b910c98e51d",
       "worker_http_passed": 10,
       "worker_browser_passed": 3,
-      "finished_no_retained_writes": true
+      "finished_no_retained_writes": true,
+      "review_fix": {
+        "interval_utc": [
+          "2026-10-18T07:57:39Z",
+          "2026-10-18T07:58:09Z"
+        ],
+        "implementation_commit": "d8fd7c13839b53ce02adbc313ea875519fae6616",
+        "handoff_commit": "8da4fa9854f196984e2fc084f41bef580103b3b7",
+        "browser_passed": 3
+      }
     }
   },
   "observations": [
@@ -75,5 +84,18 @@
     "seconds": 143,
     "nature": "independent server/UI/HTTP/browser feature implementation; no artificial waiting",
     "editing_conflicts": 0
+  },
+  "combined_review": {
+    "reviewer": "/root/reviewer",
+    "initial_baseline": "0ba9f0d96944a72c9e4e883891b80549b437da74",
+    "findings": [
+      "valid Unicode checklist rejected by32KiB cap",
+      "keyboard checkbox focus lost"
+    ],
+    "rechecked_baseline": "9876c85388614cc4727309f79807dfa51fc4c5ce",
+    "result": "both resolved; no further findings",
+    "shutdown_fix_baseline": "ea85f6dd658fb4701b6d3d5a1bc95478171ee4f9",
+    "test_recheck_baseline": "4b3f07e32a91dfd15865cf0123bcd4a0f0126613",
+    "test_recheck": "3/3 passed independently after accepting expected ECONNRESET"
   }
 }
