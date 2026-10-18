@@ -1,0 +1,18 @@
+{
+  "tested_commit": "e88d37b14ba548a080bb6141472e1b7e8b1fd99a",
+  "clean_at_launch": true,
+  "identity": {
+    "pid": 19890,
+    "command": "node src/server.js",
+    "cwd": "/Users/spectra/Dev/field-desk",
+    "cwd_verified": true,
+    "url": "http://127.0.0.1:60770"
+  },
+  "health": {
+    "ok": true
+  },
+  "html_title_verified": true,
+  "process_exit": 0,
+  "temporary_database_removed": true,
+  "scope": "setup health and shell only; feature restart acceptance remains later"
+}

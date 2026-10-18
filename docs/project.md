@@ -2,7 +2,7 @@
 
 ## Lifecycle
 
-Status: setup
+Status: ready
 
 `ready` means verified setup completion, not current service availability.
 
@@ -27,19 +27,19 @@ configuration changes. App data stays local and ignored. No deliberate faults.
 - [x] Inspect source, tooling, authentication and target; destination was absent.
 - [x] User approved foundation and all remote boundaries on 2026-10-18.
 - [x] Node 24.21.0, npm 11.19.0; six HTTP tests and one Chromium browser test passed at c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff.
-- [x] Local Git and public https://github.com/spectraexteriors/field-desk created; initial push rejected.
-- [ ] Verify required GitHub Actions checks against baseline commit.
+- [x] Local Git and public https://github.com/spectraexteriors/field-desk created; workflow-scope blocker resolved and main published.
+- [x] Checks / acceptance passed at e88d37b (PR run 39109019635); [setup evidence](../evidence/setup-checkpoint.json) records exact SHA and result.
 - [x] Real loopback HTTP and Chromium shell/navigation/mobile checks passed with temporary SQLite data; browser server stopped automatically. Restart/data feature acceptance remains development work.
 - [x] README, architecture, local development, verification and local-operation guides created; 73 relative links resolved.
-- [ ] Preserve/rewrite/read back instructions and record handoff.
-- [ ] Full documentation review and readiness evidence.
+- [x] Original instructions recoverable at 5beb249; development rewrite preserves rules and adds project guides. Coordinator reads back before commit; no writing setup workers remain.
+- [x] Coordinator reviewed all maintained current docs, instructions, templates, open tasks and accepted decision; link repairs verified. Non-author setup review and parser fix recheck passed.
 
-Blocker: initial GitHub push rejected because gh OAuth credential lacks workflow
-scope. Repository exists but no refs or Actions runs were published. User action:
-run `gh auth refresh -h github.com -s workflow` interactively, then report completion.
-Next: retry existing origin push (do not recreate repository), verify hosted CI,
-review setup, perform instruction transition. No feature dispatch before readiness.
-Full feature acceptance occurs during development.
+Setup baseline verified locally and by real hosted CI; local process identity and
+cleanup recorded in [setup operation](../evidence/setup-operation.json). Initial
+scope/push blocker and first-run missing-directory failure were resolved. Rewritten
+instructions hand off to development; setup guide remains reference-only.
+[Setup outcome](implementation/tasks/archived/setup-project.md) preserves details.
+Full saved-feature/restart acceptance is development work, not claimed by readiness.
 
 ## Coordination
 

@@ -31,5 +31,5 @@ chat on 2026-10-18. No unresolved foundation choices remain. Framework source an
 previous fixtures remain unchanged. Coordinator serializes shared files/resources;
 two feature agents implement concurrently in independent worktrees and databases.
 
-Owned by [setup-project.md](../../implementation/tasks/active/setup-project.md).
+Owned by [setup-project.md](../../implementation/tasks/archived/setup-project.md).
 Implementation and observations belong in tasks and evidence, not this decision.
