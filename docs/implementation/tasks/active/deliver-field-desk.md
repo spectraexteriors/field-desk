@@ -21,7 +21,11 @@ setup merge 8e0932b844b577e9475dba15a536c8744b096488. No remote writes by worker
 
 Read-only /root/reviewer will inspect the combined candidate before feature merges
 and the final delivery diff before main merge; no author edits or spawning.
-Coordinator will record an exact review baseline before requesting that work.
+Assigned exact combined baseline 0ba9f0d on review/integrated before dispatch:
+reviewer /root/reviewer inspects both feature modules, shared parser/UI, integration
+tests/local-operation script and current docs. Read-only, no shared process writes,
+remote operations or spawning. Report prioritized findings and limitations;
+coordinator owns fixes/rechecks. All code authors are excluded from this review.
 
 ## Progress and next action
 
@@ -35,6 +39,12 @@ on review/integrated, test/review it, then merge feature PRs into delivery/integ
 
 ## Verification and documentation
 
-No feature acceptance claimed yet. Retain actual worker intervals/commits and remote
+Combined clean 0ba9f0d passed 15 Node HTTP/logic/restart tests and six browser
+scenarios. First clean-checkout browser run failed because its script used Save template
+in edit mode (actual label Save changes). It shut down and removed temporary data;
+script corrected. Reviewer at 0ba9f0d found valid Unicode templates exceeding the
+32 KiB cap and checklist keyboard focus loss. Coordinator raised cap to 128 KiB
+and added boundary regressions; checklist owner is fixing focus within its original
+module/test boundary. No product failures invented or deliberately injected. Retain actual worker intervals/commits and remote
 check SHAs/results in evidence; no deliberate faults. Full current docs review
 required before each task closure. No charges, cloud service or global changes.

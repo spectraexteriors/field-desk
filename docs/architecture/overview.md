@@ -5,7 +5,8 @@ persists locally (ignored data/). Built-in Node facilities are runtime dependenc
 Playwright is test-only. No build step, remote API, authentication or hosted service.
 
 src/app.js owns HTTP parsing, same-origin/host checks, body limits, static serving,
-error responses, DB lifecycle and feature registration. src/server.js owns process
+error responses, DB lifecycle and feature registration. The 128 KiB request-body
+limit covers valid Unicode checklist payloads while bounding input. src/server.js owns process
 startup/shutdown. public/ui.js provides safe DOM construction and JSON fetch errors.
 
 ## Implemented feature boundaries
