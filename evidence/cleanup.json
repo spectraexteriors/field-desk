@@ -1,0 +1,36 @@
+{
+  "checked_utc": "2026-10-18T08:08:11.575605+00:00",
+  "worktrees_removed": [
+    {
+      "worktree": "setup-tests",
+      "branch": "setup/http-tests",
+      "tip": "2fb6c610a546140c52aa57cb897e6b80f8092f5f",
+      "clean_before_removal": true,
+      "reachable_from_delivery": true
+    },
+    {
+      "worktree": "followups",
+      "branch": "feature/followups",
+      "tip": "29592c035af8da5d0bfc7e9917e7f4adf629aef1",
+      "clean_before_removal": true,
+      "reachable_from_delivery": true
+    },
+    {
+      "worktree": "checklists",
+      "branch": "feature/checklists",
+      "tip": "6e9eb522298dc0731d1217bcfd81c4d630d8b681",
+      "clean_before_removal": true,
+      "reachable_from_delivery": true
+    }
+  ],
+  "temporary_worktree_parent_removed": true,
+  "remaining_owned_test_processes": [],
+  "test_port_listeners": {
+    "3219": false,
+    "3221": false,
+    "3222": false
+  },
+  "source_starter_and_original_reports_unchanged": true,
+  "previous_fixtures": "not modified; no fixture writes performed",
+  "data_files_tracked": []
+}

@@ -25,11 +25,11 @@ installing Chromium with OS dependencies. No cache/artifact uploads or paid runn
 Observe actual run SHA, event, conclusion and PR head before merging; after a merge
 verify the push run for the merged commit. Workflow existence alone is not a pass.
 
-Verification: Node HTTP 6/6 and Chromium workspace 1/1 at c616245; HTTP recheck
-6/6 after parser fix e88d37b. Actual GitHub PR run
-[39109019635](https://github.com/spectraexteriors/field-desk/actions/runs/39109019635)
-passed all steps for e88d37b14ba548a080bb6141472e1b7e8b1fd99a. Worker and
-integrated results are distinguished in [setup outcome](../implementation/tasks/archived/setup-project.md).
+Verification: clean 677bcae549ab31585097d771621f44741fc1d800 passed 18 Node
+HTTP/logic/persistence tests and seven Chromium scenarios locally. Actual PR
+[run 39110224013](https://github.com/spectraexteriors/field-desk/actions/runs/39110224013)
+passed matching remote counts on Ubuntu. Shared evidence and exact merged-commit
+checks are linked from the [delivery outcome](../implementation/tasks/archived/deliver-field-desk.md).
 
 ## Checkout-only missing directory
 

@@ -1,0 +1,449 @@
+{
+  "required_check": "Checks / acceptance",
+  "enforcement": "coordinator verifies actual head and conclusions before merge; repository/global protections unchanged",
+  "tested_delivery_commit": "677bcae549ab31585097d771621f44741fc1d800",
+  "pr_acceptance": {
+    "conclusion": "success",
+    "event": "pull_request",
+    "headSha": "677bcae549ab31585097d771621f44741fc1d800",
+    "jobs": [
+      {
+        "completedAt": "2026-10-18T08:07:49Z",
+        "conclusion": "success",
+        "databaseId": 117624562689,
+        "name": "acceptance",
+        "startedAt": "2026-10-18T08:07:17Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-18T08:07:18Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-18T08:07:18Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:19Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-18T08:07:18Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:22Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 3,
+            "startedAt": "2026-10-18T08:07:19Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:23Z",
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 4,
+            "startedAt": "2026-10-18T08:07:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:24Z",
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 5,
+            "startedAt": "2026-10-18T08:07:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:24Z",
+            "conclusion": "success",
+            "name": "Run npm run check:docs",
+            "number": 6,
+            "startedAt": "2026-10-18T08:07:24Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:43Z",
+            "conclusion": "success",
+            "name": "Run npx playwright install --with-deps chromium",
+            "number": 7,
+            "startedAt": "2026-10-18T08:07:24Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:47Z",
+            "conclusion": "success",
+            "name": "Run npm run test:browser",
+            "number": 8,
+            "startedAt": "2026-10-18T08:07:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:47Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 15,
+            "startedAt": "2026-10-18T08:07:47Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:47Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 16,
+            "startedAt": "2026-10-18T08:07:47Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-18T08:07:47Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-10-18T08:07:47Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110224013/job/117624562689"
+      }
+    ],
+    "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110224013"
+  },
+  "log_test_summary": [
+    "acceptance\tRun npm test\t2026-10-18T08:07:24.6705104Z \u2139 tests 18",
+    "acceptance\tRun npm test\t2026-10-18T08:07:24.6705445Z \u2139 pass 18",
+    "acceptance\tRun npm run check:docs\t2026-10-18T08:07:24.7836660Z 94 relative Markdown links resolve.",
+    "acceptance\tRun npm run test:browser\t2026-10-18T08:07:47.2142117Z   7 passed (3.3s)"
+  ],
+  "prs": [
+    {
+      "headRefOid": "cea4cfc4e2e0ad37d6171442acf5618976c50697",
+      "mergeCommit": {
+        "oid": "8e0932b844b577e9475dba15a536c8744b096488"
+      },
+      "number": 1,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T07:50:09Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109115683/job/117621219873",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T07:49:35Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T07:50:03Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109112940/job/117621211557",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T07:49:32Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        }
+      ],
+      "url": "https://github.com/spectraexteriors/field-desk/pull/1"
+    },
+    {
+      "headRefOid": "29592c035af8da5d0bfc7e9917e7f4adf629aef1",
+      "mergeCommit": {
+        "oid": "64839bc84cebc8fc58caf78da908abe7ecd9d071"
+      },
+      "number": 2,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T07:56:23Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109501607/job/117622371512",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T07:55:54Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T07:56:57Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109499636/job/117622365236",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T07:55:52Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        }
+      ],
+      "url": "https://github.com/spectraexteriors/field-desk/pull/2"
+    },
+    {
+      "headRefOid": "6e9eb522298dc0731d1217bcfd81c4d630d8b681",
+      "mergeCommit": {
+        "oid": "6a926c303fc173ea1a596c2aef36d934cfab0d97"
+      },
+      "number": 3,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T08:06:31Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39110140681/job/117624309770",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T08:05:58Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T08:06:32Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39110137462/job/117624300216",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T08:05:55Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        }
+      ],
+      "url": "https://github.com/spectraexteriors/field-desk/pull/3"
+    },
+    {
+      "headRefOid": "677bcae549ab31585097d771621f44741fc1d800",
+      "mergeCommit": null,
+      "number": 4,
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T08:07:49Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39110224013/job/117624562689",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T08:07:17Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T08:07:45Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39110220678/job/117624552014",
+          "name": "acceptance",
+          "startedAt": "2026-10-18T08:07:14Z",
+          "status": "COMPLETED",
+          "workflowName": "Checks"
+        }
+      ],
+      "url": "https://github.com/spectraexteriors/field-desk/pull/4"
+    }
+  ],
+  "runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 39110224013,
+      "event": "pull_request",
+      "headBranch": "delivery/integration",
+      "headSha": "677bcae549ab31585097d771621f44741fc1d800",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110224013"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39110220678,
+      "event": "push",
+      "headBranch": "delivery/integration",
+      "headSha": "677bcae549ab31585097d771621f44741fc1d800",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110220678"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39110215597,
+      "event": "push",
+      "headBranch": "delivery/integration",
+      "headSha": "6a926c303fc173ea1a596c2aef36d934cfab0d97",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110215597"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39110165690,
+      "event": "push",
+      "headBranch": "review/integrated",
+      "headSha": "3f6019eaac67741faa76d52aad20bf41e7d34d6e",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110165690"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39110140681,
+      "event": "pull_request",
+      "headBranch": "feature/checklists",
+      "headSha": "6e9eb522298dc0731d1217bcfd81c4d630d8b681",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110140681"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39110137462,
+      "event": "push",
+      "headBranch": "feature/checklists",
+      "headSha": "6e9eb522298dc0731d1217bcfd81c4d630d8b681",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110137462"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39110135952,
+      "event": "push",
+      "headBranch": "delivery/integration",
+      "headSha": "64839bc84cebc8fc58caf78da908abe7ecd9d071",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39110135952"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109863501,
+      "event": "pull_request",
+      "headBranch": "feature/checklists",
+      "headSha": "8da4fa9854f196984e2fc084f41bef580103b3b7",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109863501"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109860267,
+      "event": "push",
+      "headBranch": "feature/checklists",
+      "headSha": "8da4fa9854f196984e2fc084f41bef580103b3b7",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109860267"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109503558,
+      "event": "pull_request",
+      "headBranch": "feature/checklists",
+      "headSha": "4a5aaca32dfd03b7e8a389571d7b7b910c98e51d",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109503558"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109501607,
+      "event": "pull_request",
+      "headBranch": "feature/followups",
+      "headSha": "29592c035af8da5d0bfc7e9917e7f4adf629aef1",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109501607"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109499636,
+      "event": "push",
+      "headBranch": "feature/followups",
+      "headSha": "29592c035af8da5d0bfc7e9917e7f4adf629aef1",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109499636"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109499379,
+      "event": "push",
+      "headBranch": "feature/checklists",
+      "headSha": "4a5aaca32dfd03b7e8a389571d7b7b910c98e51d",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109499379"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109226468,
+      "event": "push",
+      "headBranch": "delivery/integration",
+      "headSha": "e61ab21143cad39bd224778843674957c787122e",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109226468"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109183031,
+      "event": "push",
+      "headBranch": "main",
+      "headSha": "8e0932b844b577e9475dba15a536c8744b096488",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109183031"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109115683,
+      "event": "pull_request",
+      "headBranch": "setup/finish",
+      "headSha": "cea4cfc4e2e0ad37d6171442acf5618976c50697",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109115683"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109112940,
+      "event": "push",
+      "headBranch": "setup/finish",
+      "headSha": "cea4cfc4e2e0ad37d6171442acf5618976c50697",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109112940"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109019635,
+      "event": "pull_request",
+      "headBranch": "setup/finish",
+      "headSha": "e88d37b14ba548a080bb6141472e1b7e8b1fd99a",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109019635"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39109016399,
+      "event": "push",
+      "headBranch": "setup/finish",
+      "headSha": "e88d37b14ba548a080bb6141472e1b7e8b1fd99a",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39109016399"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39108969839,
+      "event": "pull_request",
+      "headBranch": "setup/finish",
+      "headSha": "e24f72e3582bb3a7307f2cdfa2f9b081cacfac01",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39108969839"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 39108965930,
+      "event": "push",
+      "headBranch": "setup/finish",
+      "headSha": "e24f72e3582bb3a7307f2cdfa2f9b081cacfac01",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39108965930"
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 39108907443,
+      "event": "push",
+      "headBranch": "main",
+      "headSha": "d2bd592539ce188fd89413de5d39cab37d8730a9",
+      "status": "completed",
+      "url": "https://github.com/spectraexteriors/field-desk/actions/runs/39108907443"
+    }
+  ],
+  "source_equivalence": {
+    "review_branch": "3f6019eaac67741faa76d52aad20bf41e7d34d6e",
+    "delivery": "677bcae549ab31585097d771621f44741fc1d800",
+    "runtime_test_config_identical": true,
+    "clean_release_runtime_at_ea85f6d_identical": true
+  },
+  "final_merge_evidence": "Final PR head, merge SHA and corresponding push run recorded in PR4 after closure to avoid self-referential evidence commits."
+}

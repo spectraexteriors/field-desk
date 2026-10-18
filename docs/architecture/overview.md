@@ -21,12 +21,12 @@ provide panel, field, form-grid, toolbar, item, badge, error, empty, muted class
 
 Follow-ups use /api/followups (GET/POST) and /api/followups/:id (PATCH). Fields:
 id, title, project, notes, dueDate (YYYY-MM-DD or empty), completed (boolean).
-GET query filtering may be client-side. Worker owns only followups table.
+Filtering is client-side using local calendar dates. Follow-ups own only the followups table.
 Checklists use /api/checklist-templates (GET/POST), /:id (PATCH),
 /api/checklist-runs (GET/POST), /:id (PATCH). Template {id,name,items:[string]};
 run creation {templateId,name}; run items are snapshots with completion state.
-Worker owns checklist_templates and checklist_runs tables. Worker documents exact
-PATCH payloads. No deletion/import/export/notifications in this release.
+Checklists own checklist_templates and checklist_runs tables; exact PATCH payloads
+are documented below. No deletion/import/export/notifications in this release.
 
 Tests create isolated temporary or in-memory databases; no shared app data or
 production resources. Coordinator serializes shared interfaces, Git integration,

@@ -29,9 +29,9 @@ configuration changes. App data stays local and ignored. No deliberate faults.
 - [x] Node 24.21.0, npm 11.19.0; six HTTP tests and one Chromium browser test passed at c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff.
 - [x] Local Git and public https://github.com/spectraexteriors/field-desk created; workflow-scope blocker resolved and main published.
 - [x] Checks / acceptance passed at e88d37b (PR run 39109019635); [setup evidence](../evidence/setup-checkpoint.json) records exact SHA and result.
-- [x] Real loopback HTTP and Chromium shell/navigation/mobile checks passed with temporary SQLite data; browser server stopped automatically. Restart/data feature acceptance remains development work.
+- [x] Real loopback HTTP and Chromium shell/navigation/mobile checks passed with temporary SQLite data; browser server stopped automatically. Saved-feature acceptance was deferred until development; it has now passed as recorded below.
 - [x] README, architecture, local development, verification and local-operation guides created; 73 relative links resolved.
-- [x] Original instructions recoverable at 5beb249; development rewrite preserves rules and adds project guides. Coordinator reads back before commit; no writing setup workers remain.
+- [x] Original instructions recoverable at 5beb249; development rewrite preserves rules and adds project guides. Coordinator readback completed at transition; no writing setup workers remain.
 - [x] Coordinator reviewed all maintained current docs, instructions, templates, open tasks and accepted decision; link repairs verified. Non-author setup review and parser fix recheck passed.
 
 Setup baseline verified locally and by real hosted CI; local process identity and
@@ -39,14 +39,18 @@ cleanup recorded in [setup operation](../evidence/setup-operation.json). Initial
 scope/push blocker and first-run missing-directory failure were resolved. Rewritten
 instructions hand off to development; setup guide remains reference-only.
 [Setup outcome](implementation/tasks/archived/setup-project.md) preserves details.
-Full saved-feature/restart acceptance is development work, not claimed by readiness.
+Readiness records setup completion; subsequent feature acceptance is recorded below.
 
-## Coordination
+## Delivery and coordination
 
-Coordinator /root, integration checkout /Users/spectra/Dev/field-desk, branch
-delivery/integration. Feature assignments are recorded before dispatch in
-[delivery task](implementation/tasks/active/deliver-field-desk.md).
-Four agent slots available; coordinator plus two feature writers, then a separate
-non-author reviewer. Worktrees isolate feature branches and test databases.
-Assignments live in owning tasks before dispatch. Only coordinator changes shared
-instructions, project/decision dispositions, task locations, remotes and CI.
+Both features implemented, reviewed and verified. Coordinator /root integrated two
+concurrent feature worktrees through PR2/PR3, then [delivery PR4](https://github.com/spectraexteriors/field-desk/pull/4).
+Local and hosted checks at clean 677bcae passed 18 Node/7 Chromium tests. Approved
+clean-browser/restart operation passed at ea85f6d with identical runtime bytes.
+[Delivery outcome](implementation/tasks/archived/deliver-field-desk.md) owns closure;
+[assessment](testing/framework-delivery-2026-10-18.md) owns framework observations.
+
+No active workers or temporary worktrees remain; no test server is running.
+Use the [guides](guides/README.md) for normal local startup and verification.
+Source branches and committed evidence remain inspectable. Coordinator controls
+future shared instructions, decisions/task moves, CI, remotes and integration.

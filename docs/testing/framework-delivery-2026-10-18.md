@@ -1,6 +1,7 @@
 # Field Desk delivery observation — October 18, 2026
 
-Delivery is in progress. This report records actual project work, without injected
+The working local application passed delivery acceptance. This report records
+actual project work, without injected
 faults or manufactured overlap. The framework source and previous fixtures were
 not edited; proposed framework improvements below are recommendations only.
 
@@ -66,8 +67,8 @@ shared evidence links after review. Guide fixes belong to the same delivery task
   Coordinator added closeAllConnections and an idle-socket shutdown regression;
   bounded script cleanup now retains evidence even if stopping fails. Reviewer
   found valid ECONNRESET could make the new raw-socket test fail intermittently;
-  corrected close-wait logic passed five focused repetitions and independent3/3
-  boundary recheck at4b3f07e. Clean UI/restart acceptance passed at ea85f6d, with
+  corrected close-wait logic passed five focused repetitions and independent 3/3
+  boundary recheck at 4b3f07e. Clean UI/restart acceptance passed at ea85f6d, with
   both identity-checked servers stopped and temporary database removed. This was
   normal release verification, not a deliberately injected app fault.
 
@@ -91,7 +92,35 @@ exposing credentials; offer an optional compact assignment/verification checklis
 or helper for commit/artifact/process evidence. Keep these optional and avoid
 adding a mandatory runtime or a second status inventory.
 
-## Remaining delivery gates
+## Final delivery evidence and limits
 
-Review fixes, final local browser/restart acceptance, actual feature-PR and final
-merged-commit checks, documentation closure and cleanup remain to be recorded.
+Feature [PR2](https://github.com/spectraexteriors/field-desk/pull/2) merged at 64839bc.
+Checklist [PR3](https://github.com/spectraexteriors/field-desk/pull/3) was updated
+against integrated follow-ups before its current-head checks and merge at 6a926c3.
+Coordinator changes were replayed onto actual GitHub merge history; runtime, tests
+and config match the preserved review branch. Clean delivery 677bcae passed
+18 Node and seven Chromium scenarios locally and in actual PR run 39110224013.
+[GitHub evidence](../../evidence/github-delivery.json) retains exact SHAs/results.
+[Delivery PR4](https://github.com/spectraexteriors/field-desk/pull/4) records the final
+closure head, main merge SHA and corresponding push run; keeping post-merge IDs
+there avoids a self-referential evidence-commit loop.
+
+[Clean local acceptance](../../evidence/local-acceptance.json) at ea85f6d verifies
+real UI workflows and restart with the same temporary DB. Its runtime bytes match
+delivery. Both processes exited 0 after command/cwd identity checks; synthetic data
+removed. Screenshots are retained alongside evidence. All three clean/reachable
+temporary worktrees and parent directory were removed, with no owned test processes
+or test-port listeners. Source starter and reports match original fingerprints;
+previous test fixtures were never written. [Cleanup](../../evidence/cleanup.json).
+
+Before feature/delivery closure, coordinator read all maintained current docs,
+instructions, templates, open tasks and decisions, updated affected authoritative
+guides and repaired archival links. Final non-author closure review is required
+before merging PR4. Feature records are shortened below their soft targets; detailed
+assignment/review history remains committed. No criteria were waived.
+
+This run establishes one project delivery in this agent environment, real hosted
+CI, separate-worktree concurrency and local-only operation. It does not establish
+cloud deployment, multi-user operation, broad cross-browser support or reliability
+from repeated independent runs. Persistent app data stays on one computer. No
+artificial fault scenarios or resilience claims were added.
