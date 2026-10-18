@@ -35,9 +35,12 @@ async function launch() {
     const command = execFileSync('ps', ['-p', String(child.pid), '-o', 'command='], { encoding: 'utf8' }).trim();
     if (command !== identity.command) throw new Error('Process command changed.');
     identity.identityCheckedBeforeStop = true;
-    const exited = once(child, 'exit'); child.kill('SIGTERM'); const [code] = await exited;
-    if (code !== 0) throw new Error(`Shutdown exited ${code}`);
-    identity.stopped = true; identity.exitCode = code;
+    const exited = once(child, 'exit'); child.kill('SIGTERM');
+    const watchdog = setTimeout(() => child.kill('SIGKILL'), 5000);
+    let code, signal;
+    try { [code, signal] = await exited; } finally { clearTimeout(watchdog); }
+    identity.stopped = true; identity.exitCode = code; identity.signal = signal;
+    if (code !== 0) throw new Error(`Shutdown exited ${code}/${signal}`);
   } };
 }
 try {
@@ -87,10 +90,12 @@ try {
 } catch (error) {
   evidence.result = 'failed'; evidence.failure = error.message; throw error;
 } finally {
-  if (browser) await browser.close();
-  if (active) await active.stop();
+  const cleanupErrors = [];
+  for (const cleanup of [() => browser?.close(), () => active?.stop()]) { try { await cleanup(); } catch (error) { cleanupErrors.push(error.message); } }
   rmSync(temp, { recursive: true, force: true });
   evidence.temporaryDatabaseRemoved = !existsSync(temp); evidence.finishedAt = new Date().toISOString();
+  if (cleanupErrors.length) { evidence.result = 'failed'; evidence.cleanupErrors = cleanupErrors; }
   writeFileSync(join(output, 'local-acceptance.json'), JSON.stringify(evidence, null, 2) + '\n');
+  if (cleanupErrors.length) throw new Error(cleanupErrors.join('; '));
 }
 console.log(JSON.stringify(evidence, null, 2));

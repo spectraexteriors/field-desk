@@ -46,7 +46,8 @@ same six baseline cases and must not be summed as 20 unique tests.
 - Integrated reviewer reproduced rejection of valid 100-item Unicode templates.
   Coordinator raised body cap from 32 to 128 KiB and added valid/oversized tests.
 - Reviewer reproduced lost checkbox keyboard focus after toggling. Feature owner
-  is addressing focus restoration and consecutive-Space coverage.
+  fixed focus restoration and consecutive-Space/no-focus-theft coverage; reviewer
+  rechecked both P2 findings at 9876c85 with no further findings.
 - First local release script selected Save template after entering edit mode;
   actual button was Save changes. This was verification-script mismatch, not a
   product failure. It still stopped its owned process and removed the temporary DB;
@@ -58,6 +59,13 @@ matched absolute worktree directories and selected extra baseline tests. Separat
 browser-port configuration prevents shared-resource collisions. Repeated historical
 verification prose in three guides was reduced to procedure-specific notes and
 shared evidence links after review. Guide fixes belong to the same delivery task.
+
+- Actual clean-browser restart then exposed an accepted idle connection that
+  prevented server shutdown after its listener closed. Identity-checked browser
+  termination released it; script cleaned both server processes and temporary DB.
+  Coordinator added closeAllConnections and an idle-socket shutdown regression;
+  bounded script cleanup now retains evidence even if stopping fails. This was
+  normal release verification, not a deliberately injected app fault.
 
 ## Workflow assessment and proposed improvements
 
