@@ -7,18 +7,17 @@ setup and the instruction transition remain in the [setup guide](../setup.md).
 
 ## Find the right guide
 
-The framework coordination guide is included. Establish project-specific procedures
-during setup, replacing applicable suggested filenames below with actual guide links.
+The coordination and project procedure guides are listed below.
 Create only useful guides; omit inapplicable topics with a brief reason instead of
 adding empty files. Add new topics here when they become useful.
 
 | Need | Guide or suggested contents |
 | --- | --- |
 | Coordinate agents | [Parallel work](parallel-work.md): framework workflow for delegation, handoff, review, and integration |
-| Install or run locally | `local-development.md`: prerequisites, environment configuration, installation, development/build commands, startup checks |
-| Verify changes | `testing.md`: tests, linting, type checks, required CI checks, interpreting results |
-| Release or recover a release | `deployment.md`: target environment, prerequisites, deployment, acceptance checks, rollback/recovery |
-| Resolve a known problem | `troubleshooting.md`: symptoms, confirmed causes, fixes, verification, links to the owning procedures |
+| Install or run locally | [Local development](local-development.md): prerequisites, environment configuration, installation, development/build commands, startup checks |
+| Verify changes | [Verification](testing.md): tests, linting, type checks, required CI checks, interpreting results |
+| Release or recover a release | [Local operation](local-operation.md): target environment, prerequisites, deployment, acceptance checks, rollback/recovery |
+| Resolve a known problem | No separate guide yet; confirmed problems go in the relevant existing guide |
 
 Keep this index current when creating, renaming, consolidating, or removing guides.
 Keep navigation in this index; the main documentation map links here instead of

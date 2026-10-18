@@ -17,9 +17,8 @@
 | [Archived tasks](implementation/tasks/archived/) | Completed or cancelled work and verification evidence |
 | [Task template](templates/task.md) / [decision template](templates/decision.md) / [guide template](templates/guide.md) | Minimal reusable record formats |
 
-During setup, create the project root `README.md` for onboarding and populate
-applicable guides from verified procedures. Add the root README link here when it
-exists; keep individual guide links in the guide index. Guides own commands and
+[Project onboarding](../README.md) links verified local procedures. Keep individual
+guide links in the guide index. Guides own commands and
 procedures rather than a separate operations document or command table in
 `AGENTS.md`. Create an architecture overview when implementation facts are known.
 Add focused documents only when they make information easier to find.
