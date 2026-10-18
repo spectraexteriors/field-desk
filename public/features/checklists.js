@@ -59,7 +59,12 @@ export async function mount(root) {
           const error = el('p', { className: 'error', role: 'alert' });
           input.addEventListener('change', async () => {
             const controls = [...input.closest('article').querySelectorAll('input')];
+            const hadFocus = document.activeElement === input;
+            let focusMoved = false;
+            const moved = () => { focusMoved = true; };
             controls.forEach(control => { control.disabled = true; });
+            document.addEventListener('focusin', moved);
+            document.addEventListener('pointerdown', moved);
             error.textContent = '';
             try {
               const updated = await api(`/api/checklist-runs/${item.id}`, { method: 'PATCH', body: { itemIndex: index, completed: input.checked } });
@@ -73,7 +78,12 @@ export async function mount(root) {
             } catch (failure) {
               input.checked = !input.checked;
               error.textContent = failure.message;
-            } finally { controls.forEach(control => { control.disabled = false; }); }
+            } finally {
+              document.removeEventListener('focusin', moved);
+              document.removeEventListener('pointerdown', moved);
+              controls.forEach(control => { control.disabled = false; });
+              if (hadFocus && !focusMoved && document.activeElement === document.body && input.isConnected) input.focus({ preventScroll: true });
+            }
           });
           return el('div', {}, el('label', { className: 'checklist-step' }, input, el('span', {}, entry.text)), error);
         }));
