@@ -1,0 +1,39 @@
+{
+  "testedCommit": "ea85f6dd658fb4701b6d3d5a1bc95478171ee4f9",
+  "cleanAtLaunch": true,
+  "node": "v24.21.0",
+  "startedAt": "2026-10-18T08:04:02.304Z",
+  "launches": [
+    {
+      "pid": 22012,
+      "command": "/Users/spectra/.local/share/fnm/node-versions/v24.21.0/installation/bin/node src/server.js",
+      "cwd": "/Users/spectra/Dev/field-desk",
+      "url": "http://127.0.0.1:61586",
+      "stopped": true,
+      "identityCheckedBeforeStop": true,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 22074,
+      "command": "/Users/spectra/.local/share/fnm/node-versions/v24.21.0/installation/bin/node src/server.js",
+      "cwd": "/Users/spectra/Dev/field-desk",
+      "url": "http://127.0.0.1:61591",
+      "stopped": true,
+      "identityCheckedBeforeStop": true,
+      "exitCode": 0,
+      "signal": null
+    }
+  ],
+  "checks": [
+    "browser follow-up creation with Unicode",
+    "browser template/run creation, item completion and template edit",
+    "both features persist across process restart",
+    "run snapshot survives template edits and restart",
+    "375px layout without horizontal overflow",
+    "no browser script errors"
+  ],
+  "result": "passed",
+  "temporaryDatabaseRemoved": true,
+  "finishedAt": "2026-10-18T08:04:03.134Z"
+}

@@ -8,7 +8,7 @@ npm start
 ```
 
 Open http://127.0.0.1:3210. PORT selects another port; FIELD_DESK_DB selects a
-SQLite file (default data/field-desk.sqlite). Stop with Ctrl-C. Bind is loopback
+SQLite file (default data/field-desk.sqlite). Stop with Ctrl-C; accepted idle browser connections close during shutdown. Bind is loopback
 only. There is no build step or external service. Do not share the listener.
 
 Data, node_modules and test output are ignored. Tests use temporary databases,
