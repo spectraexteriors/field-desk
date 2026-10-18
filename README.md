@@ -7,7 +7,12 @@ Requires Node 24 and npm. Follow [local development](docs/guides/local-developme
 for installation and startup, [testing](docs/guides/testing.md) for verification,
 and [local operation](docs/guides/local-operation.md) for persistence and recovery.
 
-Setup currently provides the UI shell and HTTP/database foundation. Follow-up and
-checklist functionality is approved for subsequent parallel implementation.
+- Follow-ups: title, project label, notes and due date; edit, complete, reopen and
+  filter open/overdue/completed items.
+- Checklists: reusable templates, named runs, completion progress, and preserved
+  run snapshots when templates change.
+
+No account, external API or build step. Data persists in a local SQLite file.
+Use one running app on one computer; source publication does not publish app data.
 
 [Documentation map](docs/README.md) · [Architecture](docs/architecture/overview.md)

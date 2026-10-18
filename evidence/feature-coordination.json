@@ -1,0 +1,79 @@
+{
+  "assignment_baseline": "e61ab21143cad39bd224778843674957c787122e",
+  "workers": {
+    "/root/followups": {
+      "branch": "feature/followups",
+      "started_utc": "2026-10-18T07:51:37Z",
+      "browser_port": 3221,
+      "ended_utc": "2026-10-18T07:54:08Z",
+      "implementation_commit": "3fdd8eb804adf32eb95b71c9535aac08e994f5a9",
+      "handoff_commit": "29592c035af8da5d0bfc7e9917e7f4adf629aef1",
+      "worker_http_passed": 10,
+      "worker_browser_passed": 3,
+      "finished_no_retained_writes": true
+    },
+    "/root/checklists": {
+      "branch": "feature/checklists",
+      "started_utc": "2026-10-18T07:51:43Z",
+      "browser_port": 3222,
+      "ended_utc": "2026-10-18T07:54:06Z",
+      "implementation_commit": "7029b315255014074ecfd960e3ad93946681de75",
+      "handoff_commit": "4a5aaca32dfd03b7e8a389571d7b7b910c98e51d",
+      "worker_http_passed": 10,
+      "worker_browser_passed": 3,
+      "finished_no_retained_writes": true
+    }
+  },
+  "observations": [
+    {
+      "observed_utc": "2026-10-18T07:52:33.520021+00:00",
+      "worktree": "followups",
+      "head": "e61ab21143cad39bd224778843674957c787122e",
+      "status": []
+    },
+    {
+      "observed_utc": "2026-10-18T07:52:33.537212+00:00",
+      "worktree": "checklists",
+      "head": "e61ab21143cad39bd224778843674957c787122e",
+      "status": []
+    },
+    {
+      "observed_utc": "2026-10-18T07:52:58.616110+00:00",
+      "worktrees": {
+        "followups": {
+          "head": "e61ab21143cad39bd224778843674957c787122e",
+          "status": [
+            "M public/features/followups.css",
+            " M public/features/followups.js",
+            " M src/features/followups.js"
+          ],
+          "feature_file_hashes": {
+            "src/features/followups.js": "aeb7c0662d6bb6f2d9c31c0490c70ab5c47694fcf414ffa274be0ea79d66180f",
+            "public/features/followups.js": "11ebcf00250e84bff80bff76b40eb48d08aab0f82dd8a3bbc007cce8c7551525",
+            "public/features/followups.css": "b1dae54b5e5ed3c5f4c19b87375f61f1277e8a5f23919d4dbd1e32420491d303"
+          }
+        },
+        "checklists": {
+          "head": "e61ab21143cad39bd224778843674957c787122e",
+          "status": [
+            "M public/features/checklists.css",
+            " M public/features/checklists.js",
+            " M src/features/checklists.js"
+          ],
+          "feature_file_hashes": {
+            "src/features/checklists.js": "4e1f35d0cad05580cc0e42ac093e808166235efaf5ac47df30d56d42010b2703",
+            "public/features/checklists.js": "9a0d1eb0537dda2866b1d9aeb5a485c6ece850a1bb159782f3a2e1930641a675",
+            "public/features/checklists.css": "86bea2da86063cbbf7a81adafaf21b130ce1f73ef8b2c528d410db92c3efa5ff"
+          }
+        }
+      }
+    }
+  ],
+  "overlap": {
+    "start_utc": "2026-10-18T07:51:43Z",
+    "end_utc": "2026-10-18T07:54:06Z",
+    "seconds": 143,
+    "nature": "independent server/UI/HTTP/browser feature implementation; no artificial waiting",
+    "editing_conflicts": 0
+  }
+}

@@ -8,14 +8,14 @@ src/app.js owns HTTP parsing, same-origin/host checks, body limits, static servi
 error responses, DB lifecycle and feature registration. src/server.js owns process
 startup/shutdown. public/ui.js provides safe DOM construction and JSON fetch errors.
 
-## Feature integration contract (approved future implementation)
+## Implemented feature boundaries
 
 Workers own src/features/<feature>.js, public/features/<feature>.js/.css,
 test/<feature>.test.js and test/browser/<feature>.spec.js. Each server module exports
 init(db) and handle({db,method,path,body}); return null for unhandled paths or
 {status,body}. Throw Error with numeric .status for expected validation failures.
 Each browser module exports async mount(root), importing api/el from /ui.js.
-Coordinator alone registers modules in src/app.js and public/app.js. Shared styles
+Coordinator registers modules in src/app.js and public/app.js. Shared styles
 provide panel, field, form-grid, toolbar, item, badge, error, empty, muted classes.
 
 Follow-ups use /api/followups (GET/POST) and /api/followups/:id (PATCH). Fields:
@@ -30,3 +30,18 @@ PATCH payloads. No deletion/import/export/notifications in this release.
 Tests create isolated temporary or in-memory databases; no shared app data or
 production resources. Coordinator serializes shared interfaces, Git integration,
 CI, documentation index and task dispositions.
+
+## API details
+
+GET collections return raw arrays; POST/PATCH return raw saved objects. IDs are
+positive integers; expected input errors return 400 and missing IDs return 404.
+Follow-up POST defaults project/notes/dueDate to empty and completed to false;
+PATCH accepts any nonempty subset of fields. Limits: title 160, project 120,
+notes 4000; real local-calendar due dates from 0001-01-01 through 9999-12-31.
+Unknown fields/types are rejected without partial updates.
+
+Template name/run name: 120 characters. Templates contain 1–100 trimmed text items
+of at most 200 characters. Template PATCH accepts name and/or items. Run POST takes
+{templateId,name}; response {id,name,templateId,templateName,items:[{text,completed}]}.
+Run PATCH takes {itemIndex,completed}; snapshot name/items remain independent of
+subsequent template edits. Feature-owned init functions create their own tables.
