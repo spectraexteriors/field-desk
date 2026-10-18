@@ -21,6 +21,13 @@ test('checklists create, edit, run and preserve snapshots with keyboard and mobi
   await run.getByRole('checkbox', { name: 'Charge camera', exact: true }).focus();
   await page.keyboard.press('Space');
   await expect(run.getByText('1 of 2 complete', { exact: true })).toBeVisible();
+  await expect(run.getByRole('checkbox', { name: 'Charge camera', exact: true })).toBeFocused();
+  await page.keyboard.press('Space');
+  await expect(run.getByText('0 of 2 complete', { exact: true })).toBeVisible();
+  await expect(run.getByRole('checkbox', { name: 'Charge camera', exact: true })).toBeFocused();
+  await page.keyboard.press('Space');
+  await expect(run.getByText('1 of 2 complete', { exact: true })).toBeVisible();
+  await expect(run.getByRole('checkbox', { name: 'Charge camera', exact: true })).toBeFocused();
   await root.getByRole('button', { name: `Edit template ${originalName}`, exact: true }).click();
   await root.getByLabel('Template name', { exact: true }).fill(`Revised ${suffix}`);
   await root.getByLabel('Items (one per line)').fill('Pack ladder');
@@ -49,4 +56,29 @@ test('checklists retain form input and show a useful validation error', async ({
   await root.getByLabel('Items (one per line)').fill('Corrected item');
   await root.getByRole('button', { name: 'Save template', exact: true }).click();
   await expect(root.getByRole('heading', { name: 'Invalid item example', exact: true })).toBeVisible();
+});
+
+
+test('checklist saves do not reclaim focus after the user moves elsewhere', async ({ page, request }) => {
+  const template = await (await request.post('/api/checklist-templates', { data: { name: 'Focus template', items: ['Focus item'] } })).json();
+  const run = await (await request.post('/api/checklist-runs', { data: { templateId: template.id, name: 'Focus run' } })).json();
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Checklists', exact: true }).click();
+  let release;
+  const pending = new Promise(resolve => { release = resolve; });
+  let started;
+  const saving = new Promise(resolve => { started = resolve; });
+  await page.route(`**/api/checklist-runs/${run.id}`, async route => {
+    started();
+    await pending;
+    await route.continue();
+  });
+  const checkbox = page.getByRole('article', { name: 'Run Focus run', exact: true }).getByRole('checkbox', { name: 'Focus item', exact: true });
+  await checkbox.click();
+  await saving;
+  await page.getByLabel('Run name', { exact: true }).click();
+  release();
+  await expect(checkbox).toBeEnabled();
+  await expect(checkbox).toBeChecked();
+  await expect(page.getByLabel('Run name', { exact: true })).toBeFocused();
 });
