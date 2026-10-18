@@ -25,9 +25,31 @@ Install npm ci in your worktree as needed; no dependency/config/shared-doc edits
 No task moves, remote writes, spawning or production changes. Route shared guide
 suggestions to coordinator. Dates should use local calendar semantics.
 
-## Handoff
+## Implementation and handoff
 
-Implement now; record actual start/end and meaningful failures, test results and
-precise tested commit/dirty artifact. Commit assigned changes, report files/checks,
-contract details, limitations and guide suggestions. Remain active awaiting combined
-integration/verification and coordinator closure. Do not manufacture waiting overlap.
+Actual implementation/check interval: 2026-10-18T07:51:37Z–07:54:08Z. Implemented
+persistent CRUD subset (create/edit/complete/reopen), open/overdue/completed filters,
+local-calendar dates, safe text rendering, keyboard focus, responsive layout,
+empty/loading/error states and retry. No artificial scenario or faults introduced.
+PATCH accepts any nonempty subset of title/project/notes/dueDate/completed; GET
+returns an array and POST/PATCH an object. Unknown keys/types, blank title, excessive
+length and impossible dates fail without changing saved data. Limits: title 160,
+project 120, notes 4000; dueDate empty or real YYYY-MM-DD (years 0001–9999).
+
+Clean implementation/test commit `3fdd8eb804adf32eb95b71c9535aac08e994f5a9`
+on Node 24.21.0: npm test 10/10 (6 baseline + 4 feature); isolated Chromium feature
+suite 3/3 on port 3221. Covers keyboard/mobile create/edit, complete/reopen/reload,
+validation/input retention, edit cancellation, due-today boundary, record isolation,
+atomic invalid updates and missing/unsupported routes. Initial browser assertion
+expected a hidden empty alert in accessible roles; corrected the assertion and
+rechecked. No application failure was observed. Installation used existing lockfile;
+zero audited vulnerabilities. Playwright stopped its temporary server; no normal
+data path used. Restart and combined checks belong to coordinator integration.
+
+Shared-guide suggestions sent to coordinator: document response/PATCH and length
+contracts in architecture; use full test/browser/followups.spec.js selector because
+`-- followups` also matches the absolute worktree path and selects baseline tests.
+All current docs/instructions read as assigned; coordinator owns full documentation
+review, guide edits and closure. Only assigned feature/test files changed; this
+record is the sole subsequent documentation change. Ready for integration; remain
+active awaiting coordinator verification and task archival.
