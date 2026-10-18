@@ -48,3 +48,15 @@ and added boundary regressions; checklist owner is fixing focus within its origi
 module/test boundary. No product failures invented or deliberately injected. Retain actual worker intervals/commits and remote
 check SHAs/results in evidence; no deliberate faults. Full current docs review
 required before each task closure. No charges, cloud service or global changes.
+
+Review recheck assignment before dispatch: /root/reviewer, read-only exact combined
+9876c85388614cc4727309f79807dfa51fc4c5ce. Verify 128 KiB cap and new boundary tests,
+checklist focus fix d8fd7c1 with repeated-Space/no-focus-theft regressions, and
+corrected local acceptance selector. Same boundaries; no writes or shared ports.
+Coordinator integrated suite passed 17 Node/7 browser; local release run pending.
+
+Local release run at clean 9876c85 stalled during restart on an accepted idle browser
+socket. Coordinator identity-checked parent/server/browser, terminated only owned
+headless browser, observed clean child exits and DB removal; failed run retained.
+New shutdown closes accepted connections; regression and bounded script cleanup
+added. Non-author recheck required before publication. No fault injection.

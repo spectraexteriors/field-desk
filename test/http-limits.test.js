@@ -1,4 +1,6 @@
 import test from 'node:test';
+import net from 'node:net';
+import { once } from 'node:events';
 import assert from 'node:assert/strict';
 import { createApp } from '../src/app.js';
 async function start(t) {
@@ -21,4 +23,17 @@ test('oversized requests fail usefully and leave the app available', async t => 
   assert.equal(response.status, 413);
   assert.match((await response.json()).error, /large/i);
   assert.deepEqual(await (await fetch(base + '/api/health')).json(), { ok: true });
+});
+
+test('shutdown closes an accepted idle browser connection without waiting for a request', async () => {
+  const app = createApp({ dbPath: ':memory:' });
+  await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve));
+  const socket = net.createConnection({ host: '127.0.0.1', port: app.server.address().port });
+  await once(socket, 'connect');
+  const closed = once(socket, 'close');
+  let timedOut = false;
+  const timeout = setTimeout(() => { timedOut = true; socket.destroy(); }, 1000);
+  try { await app.close(); await closed; }
+  finally { clearTimeout(timeout); socket.destroy(); }
+  assert.equal(timedOut, false, 'shutdown must close idle accepted sockets itself');
 });

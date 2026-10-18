@@ -1,0 +1,34 @@
+{
+  "testedCommit": "9876c85388614cc4727309f79807dfa51fc4c5ce",
+  "cleanAtLaunch": true,
+  "node": "v24.21.0",
+  "startedAt": "2026-10-18T08:01:09.982Z",
+  "launches": [
+    {
+      "pid": 21630,
+      "command": "/Users/spectra/.local/share/fnm/node-versions/v24.21.0/installation/bin/node src/server.js",
+      "cwd": "/Users/spectra/Dev/field-desk",
+      "url": "http://127.0.0.1:61486",
+      "stopped": true,
+      "identityCheckedBeforeStop": true,
+      "exitCode": 0
+    },
+    {
+      "pid": 21867,
+      "command": "/Users/spectra/.local/share/fnm/node-versions/v24.21.0/installation/bin/node src/server.js",
+      "cwd": "/Users/spectra/Dev/field-desk",
+      "url": "http://127.0.0.1:61559",
+      "stopped": true,
+      "identityCheckedBeforeStop": true,
+      "exitCode": 0
+    }
+  ],
+  "checks": [
+    "browser follow-up creation with Unicode",
+    "browser template/run creation, item completion and template edit"
+  ],
+  "result": "failed",
+  "failure": "page.goto: Target page, context or browser has been closed",
+  "temporaryDatabaseRemoved": true,
+  "finishedAt": "2026-10-18T08:03:11.024Z"
+}
