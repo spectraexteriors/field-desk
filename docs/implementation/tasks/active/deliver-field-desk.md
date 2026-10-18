@@ -25,9 +25,13 @@ Coordinator will record an exact review baseline before requesting that work.
 
 ## Progress and next action
 
-Setup PR1 merged after checks and review. Setup merged-commit CI pending observation.
-Next: dispatch recorded feature assignments, implement shared persistence/UTF-8
-integration tests during their work, observe overlap, then review and integrate PRs.
+Setup PR1 merged after checks and review. Setup merged-commit push run 39109183031 passed exact 8e0932b.
+Both writers dispatched on e61ab21, using rewritten instructions and isolated
+ports. At 07:52:58 UTC both had modified server/UI/CSS files; fingerprints retained
+in evidence/feature-coordination.json. Coordinator authored combined process-restart,
+snapshot and split-UTF8 checks plus clean-checkout browser acceptance. These tests
+are not run against feature stubs. Next: collect handoffs, locally combine candidate
+on review/integrated, test/review it, then merge feature PRs into delivery/integration.
 
 ## Verification and documentation
 

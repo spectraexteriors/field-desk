@@ -3,11 +3,19 @@
 The user approved a local-only application instead of cloud deployment. Normal
 [startup](local-development.md) is the release procedure; no service provisioning.
 
-For acceptance, run a clean committed checkout with FIELD_DESK_DB set to a temporary
-SQLite file, exercise browser workflows, stop/restart the same source and database,
-and confirm records persist. Record tested commit, command, working location,
-listener and process identity. Stop temporary servers after checks. Setup verifies
-only health and shell; feature acceptance must later verify real saved records.
+For release acceptance, use a clean committed checkout after installation:
+
+```sh
+npm run verify:local
+```
+
+The script creates synthetic records through Chromium, edits a template, restarts
+the actual Node process with the same temporary SQLite file, and confirms persisted
+follow-ups, runs and snapshot items. It checks narrow layout and browser script
+errors. The ignored .local-evidence directory receives screenshots and JSON with
+commit/cleanliness, process command/cwd/listener and identity-checked shutdown.
+Temporary databases/processes are removed. This procedure is pending first full
+feature verification; the setup-only evidence below remains accurately scoped.
 
 For personal backups, stop the app before copying the complete data directory.
 Restore only while stopped. Never overwrite real data with test fixtures. A source

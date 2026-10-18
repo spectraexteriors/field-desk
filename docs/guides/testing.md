@@ -12,10 +12,13 @@ npm run test:browser
 Node discovers test/*.test.js. Request-body/origin validation precedes mutation route dispatch.
 HTTP tests use real ephemeral loopback listeners
 and isolated databases. Playwright uses port 3219 by default; FIELD_DESK_BROWSER_PORT selects an isolated
-worker port. It uses and an automatically cleaned
+worker port, with an automatically cleaned
 temporary database. Its server refuses reuse; free that port before browser tests.
 The workspace browser check covers keyboard navigation and mobile overflow.
-Feature tests will extend acceptance as implementation arrives.
+Feature workers own browser/HTTP scenarios. The coordinator integration test launches
+and restarts a real process for both features and splits a multibyte UTF-8 title
+across HTTP chunks. The [local release procedure](local-operation.md) adds clean-
+checkout browser and restart verification; its first complete run is pending.
 
 GitHub Actions Checks / acceptance runs these checks on standard Ubuntu runners,
 installing Chromium with OS dependencies. No cache/artifact uploads or paid runners.
@@ -34,3 +37,15 @@ If check:docs fails on a link to an empty task directory only in CI, verify that
 Git tracks a .gitkeep there. Git tracks files, not empty directories. The first
 hosted run exposed the pending-directory omission after setup moved its only task.
 The project copy now preserves it; no source-framework edit was made.
+
+## Feature-only browser checks
+
+Pass a full relative test filename, for example:
+
+```sh
+FIELD_DESK_BROWSER_PORT=3221 npm run test:browser -- test/browser/followups.spec.js
+```
+
+Playwright positional filters also match the absolute worktree path. A bare
+feature name can therefore select baseline tests too. Both workers observed this;
+explicit filenames isolate the intended browser scenarios.
