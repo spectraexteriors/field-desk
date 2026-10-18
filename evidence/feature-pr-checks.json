@@ -1,0 +1,56 @@
+[
+  {
+    "pr": 2,
+    "headRefOid": "29592c035af8da5d0bfc7e9917e7f4adf629aef1",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-18T07:56:23Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109501607/job/117622371512",
+        "name": "acceptance",
+        "startedAt": "2026-10-18T07:55:54Z",
+        "status": "COMPLETED",
+        "workflowName": "Checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-18T07:56:57Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109499636/job/117622365236",
+        "name": "acceptance",
+        "startedAt": "2026-10-18T07:55:52Z",
+        "status": "COMPLETED",
+        "workflowName": "Checks"
+      }
+    ],
+    "url": "https://github.com/spectraexteriors/field-desk/pull/2"
+  },
+  {
+    "pr": 3,
+    "headRefOid": "8da4fa9854f196984e2fc084f41bef580103b3b7",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-18T08:02:15Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109863501/job/117623462179",
+        "name": "acceptance",
+        "startedAt": "2026-10-18T08:01:42Z",
+        "status": "COMPLETED",
+        "workflowName": "Checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-18T08:02:06Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/spectraexteriors/field-desk/actions/runs/39109860267/job/117623452067",
+        "name": "acceptance",
+        "startedAt": "2026-10-18T08:01:38Z",
+        "status": "COMPLETED",
+        "workflowName": "Checks"
+      }
+    ],
+    "url": "https://github.com/spectraexteriors/field-desk/pull/3"
+  }
+]

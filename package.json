@@ -11,7 +11,8 @@
     "start": "node src/server.js",
     "test": "node --test test/*.test.js",
     "test:browser": "playwright test",
-    "check:docs": "node scripts/check-docs.js"
+    "check:docs": "node scripts/check-docs.js",
+    "verify:local": "node scripts/verify-local.js"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1"

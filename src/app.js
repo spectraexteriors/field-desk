@@ -35,7 +35,7 @@ export function createApp({ dbPath = 'data/field-desk.sqlite' } = {}) {
         const chunks = []; let bytes = 0;
         for await (const chunk of req) {
           bytes += chunk.length;
-          if (bytes > 32768) throw new HttpError(413, 'Request is too large.');
+          if (bytes > 128 * 1024) throw new HttpError(413, 'Request is too large.');
           chunks.push(chunk);
         }
         try { body = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { throw new HttpError(400, 'Enter valid JSON.'); }
@@ -60,5 +60,5 @@ export function createApp({ dbPath = 'data/field-desk.sqlite' } = {}) {
       json(error.status || (error instanceof URIError ? 400 : 500), { error: error.status ? error.message : 'Unable to process the request.' });
     }
   });
-  return { server, close: async () => { if (server.listening) await new Promise((resolve, reject) => server.close(e => e ? reject(e) : resolve())); db.close(); } };
+  return { server, close: async () => { if (server.listening) await new Promise((resolve, reject) => { server.close(e => e ? reject(e) : resolve()); server.closeAllConnections(); }); db.close(); } };
 }

@@ -1,0 +1,9 @@
+{
+  "testedCommit": "9876c85388614cc4727309f79807dfa51fc4c5ce",
+  "failure": "server shutdown waits on accepted idle Chromium socket after listener closes",
+  "ownedParent": 21607,
+  "ownedServer": 21630,
+  "browser": 21657,
+  "identityVerified": true,
+  "recovery": "terminate only owned headless browser to release its socket; acceptance script will finish cleanup"
+}

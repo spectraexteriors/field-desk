@@ -9,6 +9,7 @@
 | [Setup guide](setup.md) | Intake, adoption, readiness, and instruction transition procedure |
 | [Project guides](guides/README.md) | Framework coordination workflow and project commands, running, testing/CI, deployment/recovery, troubleshooting |
 | [Architecture](architecture/) | Implemented structure, interfaces, data flow, and constraints |
+| [Delivery observation](testing/framework-delivery-2026-10-18.md) | Framework exercise, actual findings, evidence and proposed improvements |
 | [Pending decisions](decisions/pending/) | Proposals awaiting a user choice |
 | [Accepted decisions](decisions/accepted/) | Approved choices and their rationale |
 | [Archived decisions](decisions/archived/) | Rejected, withdrawn, or superseded choices |
