@@ -5,5 +5,6 @@
     "framework-live-2026-10-18.md": "035382096c7dac7a0031a39a87237df31bec3da88e89075ac1e61028090d8a53",
     "framework-regression-2026-10-18.md": "55744c3a2398e9a4b239f76f49fc78a6896bfc91c06d5e463d37be51cfccabd4"
   },
-  "copy_identical_before_edits": true
+  "copy_identical_before_edits": true,
+  "starter_checkpoint": "13dd0cbc3b7812fff9579949d4b6441786cb919bd3f248478b123af64baf13a6"
 }

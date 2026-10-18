@@ -26,16 +26,28 @@ copy of its checklist.
 
 ## Progress and handoff
 
-User approved the complete foundation proposal on 2026-10-18. Source copy verified byte-identical before project edits. Next: implement shared baseline and delegate independent HTTP tests; then verify hosted CI and local operation before instruction transition.
+Coordinator implemented HTTP/SQLite/UI/CI while /root/setup_tests authored six
+independent HTTP checks (assignment and overlap in setup-http-tests.md).
+Worker finished; merged 2fb6c61 with --no-ff at c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff.
+No active setup workers. Original instructions preserved at 5beb249; rewrite has
+not occurred and lifecycle remains setup.
+
+Public repository created; initial push rejected by GitHub because gh OAuth token
+lacks workflow scope. No published refs or Actions runs. User must interactively
+run `gh auth refresh -h github.com -s workflow`; then retry existing origin push,
+verify CI, obtain setup review and perform instruction/documentation handoff.
+No deliberate fault was introduced; this is an actual credential-permission issue.
 
 ## Verification
 
-No checks performed. Record actual local, CI, deployment/alternative, and instruction
-review evidence when setup runs. Link project checklist evidence rather than
-duplicating results. Planned checks are not passing checks.
+Clean committed baseline c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff on Node 24.21.0/npm 11.19.0:
+`npm test` 6/6; Chromium browser acceptance 1/1; `npm run check:docs` 73 valid
+relative links. npm install audit: zero vulnerabilities. Browser runner launched
+node scripts/browser-server.js on loopback 3219 using a temporary SQLite directory;
+it shut down after the run. No cloud deployment. Remote CI remains unverified.
+Evidence: [setup checkpoint](../../../../evidence/setup-checkpoint.json).
 
 ## Documentation review
 
-Not yet performed. Before closure, follow the
-[completion checklist](../../../README.md#completion-and-cleanup) and record scope,
-findings, resolutions, and any follow-ups here.
+Guides updated with actual local results and explicit remote blocker. Full closure
+review and independent setup review remain pending; this task is not complete.

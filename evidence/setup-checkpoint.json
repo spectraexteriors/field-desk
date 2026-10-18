@@ -1,0 +1,42 @@
+{
+  "tested_commit": "c616245ea9fa77ee4a8913a1c36ad08f27f8d8ff",
+  "clean_at_application_checks": true,
+  "environment": {
+    "node": "24.21.0",
+    "npm": "11.19.0"
+  },
+  "http_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "browser_tests": {
+    "passed": 1,
+    "failed": 0,
+    "browser": "Chromium",
+    "checks": [
+      "semantic workspace",
+      "keyboard navigation",
+      "375px overflow"
+    ]
+  },
+  "relative_markdown_links": 73,
+  "repo": "https://github.com/spectraexteriors/field-desk",
+  "publication": {
+    "repository_created": true,
+    "initial_push": "rejected: OAuth credential lacks workflow scope",
+    "remote_refs_published": false,
+    "actions_runs": []
+  },
+  "setup_test_worker": "/root/setup_tests",
+  "worker_commit": "2fb6c610a546140c52aa57cb897e6b80f8092f5f",
+  "worker_work_interval_utc": [
+    "2026-10-18T07:36:35Z",
+    "2026-10-18T07:37:16Z"
+  ],
+  "worker_changed": [
+    "test/baseline.test.js",
+    "docs/implementation/tasks/active/setup-http-tests.md"
+  ],
+  "deliberate_faults": false,
+  "instruction_transition": "not yet performed; original preserved in Git"
+}
