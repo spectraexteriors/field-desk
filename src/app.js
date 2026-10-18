@@ -32,13 +32,13 @@ export function createApp({ dbPath = 'data/field-desk.sqlite' } = {}) {
       if (!['GET', 'HEAD'].includes(method)) {
         if (req.headers.origin && req.headers.origin !== `http://${host}`) throw new HttpError(403, 'Cross-origin requests are not allowed.');
         if (req.headers['content-type']?.split(';')[0].trim() !== 'application/json') throw new HttpError(415, 'Send application/json.');
-        let raw = ''; let bytes = 0;
+        const chunks = []; let bytes = 0;
         for await (const chunk of req) {
           bytes += chunk.length;
           if (bytes > 32768) throw new HttpError(413, 'Request is too large.');
-          raw += chunk.toString();
+          chunks.push(chunk);
         }
-        try { body = JSON.parse(raw); } catch { throw new HttpError(400, 'Enter valid JSON.'); }
+        try { body = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { throw new HttpError(400, 'Enter valid JSON.'); }
         if (!body || Array.isArray(body) || typeof body !== 'object') throw new HttpError(400, 'Expected a JSON object.');
       }
       if (method === 'GET' && path === '/api/health') return json(200, { ok: true });

@@ -35,7 +35,10 @@ not occurred and lifecycle remains setup.
 User refreshed workflow scope; push of d2bd592 succeeded. Hosted run 39108907443
 failed docs link check because Git omitted the empty pending-task directory.
 Added .gitkeep within this project, preserving the source. No deliberate fault.
-Next: corrective PR checks, reviewer findings, then instruction transition.
+Non-author /root/reviewer found split-chunk UTF-8 corruption (P2); coordinator
+collects buffers and decodes once. Reviewer will verify the fix. The permanent
+raw HTTP regression will target a real saved feature when development starts.
+Next: corrective checks/review, then instruction transition.
 
 ## Verification
 
